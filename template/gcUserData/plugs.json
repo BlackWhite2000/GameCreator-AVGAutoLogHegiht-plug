@@ -1,0 +1,38 @@
+[
+    {
+        "allPlugUseData": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            [],
+            [],
+            [],
+            [],
+            [],
+            null,
+            null,
+            [],
+            [
+                {
+                    "filePath": "Game/GCplug/994/DialogLogAutoHeight.ts",
+                    "isServer": false
+                }
+            ],
+            null,
+            null,
+            [],
+            []
+        ],
+        "id": 994,
+        "name": "历史回忆文本高度自适应",
+        "lastUpdateTime": 1712488770,
+        "author": "BlackWhite",
+        "gcver": null
+    }
+]
