@@ -6,7 +6,7 @@ module OpenAPI {
     /**
      * 当前版本号
      */
-    static Version = 1.0
+    static Version = 1.1
 
     /**
      * 是否安装本插件
@@ -17,7 +17,7 @@ module OpenAPI {
 /**
  * 对话记录
  */
-class GUI_DialogLogAutoHeight extends GUI_DialogLog {}
+class GUI_DialogLogAutoHeight extends GUI_DialogLog { }
 
 // 记录原函数
 // @ts-ignore 忽略处理
@@ -29,12 +29,13 @@ GUI_DialogLog.prototype.refreshList = function () {
   GUI_DialogLogAutoHeight_refreshList.apply(this, arguments)
   // 获取对话记录
   const dialogRecords = WorldData.dialogRecords
-  if (!dialogRecords || dialogRecords.length == 0) {
+  if (!dialogRecords || dialogRecords.length === 0) {
     this.dialogRecordList.items = []
     return
   }
   let _y = 0
   let _height = 0
+  let boxHeight = 0
   for (let i = 0; i < dialogRecords.length; i++) {
     const item = this.dialogRecordList.getItemUI(i)
     if (i > 0) {
@@ -44,10 +45,16 @@ GUI_DialogLog.prototype.refreshList = function () {
       _y = item._y
     }
     // @ts-ignore 忽略处理
-    else { item.y = 0 }
+    else {
+      item.y = 0
+    }
+    // @ts-ignore 忽略处理
+    item.height = item.dialogContent.textHeight
     // @ts-ignore 忽略处理
     _height = item.dialogContent.textHeight
+    boxHeight += _height + this.dialogRecordList.spaceY
   }
-  // 滚动到最底下
+  // @ts-ignore 忽略处理
+  this.dialogRecordList._contentHeight = boxHeight
   this.dialogRecordList.scrollTo(99999)
 }

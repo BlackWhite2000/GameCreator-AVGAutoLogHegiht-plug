@@ -236,7 +236,7 @@
                 "condition": [],
                 "type": "UIList",
                 "name": "dialogRecordList",
-                "x": 105,
+                "x": 106,
                 "y": 185,
                 "width": 1410,
                 "height": 570,

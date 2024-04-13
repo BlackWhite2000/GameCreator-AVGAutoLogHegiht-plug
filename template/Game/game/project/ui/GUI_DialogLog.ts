@@ -29,6 +29,9 @@ class GUI_DialogLog extends GUI_4 {
         else {
             ui.tsBtn.visible = false;
         }
+    
+    ui.y = 200
+    ui._y = 200
     }
     /**
      * 刷新列表
@@ -51,6 +54,8 @@ class GUI_DialogLog extends GUI_4 {
             a.push(item);
         }
         this.dialogRecordList.items = a;
+
+
         // 滚动到最底下
         this.dialogRecordList.scrollTo(99999);
     }
